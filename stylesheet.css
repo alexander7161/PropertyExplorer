@@ -1,0 +1,86 @@
+#priceLabel {
+    -fx-label-padding:4;
+    -fx-font-weight: bold;
+    -fx-font-size: 15;
+    -fx-text-fill: #ffffff;
+}
+
+   .choice-box .context-menu { -fx-background-color: #FF7378; }
+   .choice-box .menu-item:focused { -fx-background-color: white; }
+   .choice-box .menu-item > .label { -fx-text-fill: white; -fx-font-size: 13; }
+   .choice-box .menu-item:focused > .label { -fx-text-fill: black; -fx-font-size: 13; }
+ .choice-box {
+       -fx-background-color: #B22D31;
+       -fx-mark-color: white; // arrow color
+   }
+ .choice-box > .label { -fx-text-fill: white; -fx-font-size: 13;}
+
+#statusBar {
+    -fx-border-color:transparent transparent black transparent;
+    -fx-background-color: #FF5A5F;
+}
+#currentPaneLabel {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
+
+#bottomBar {
+    -fx-border-color:black transparent transparent transparent;
+    -fx-background-color: #FF5A5F;
+}
+
+#welcomePanel {
+    -fx-background-image: url("img/background3.jpg");
+    -fx-background-size: stretch;
+}
+
+#statisticsPanel {
+    -fx-background-image: url("StatisticsPanelImage.jpg");
+    -fx-background-repeat: stretch;
+    -fx-background-size: 950 506;
+}
+
+#instructionsLabel {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill:  #f0fff0;
+}
+
+#priceRangeHBox {
+    -fx-font-size: 18px;
+
+}
+#leftRightButton {
+    -fx-background-color: #B22D31;
+    -fx-font-size: 14;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+#leftRightButton:pressed {
+    -fx-background-color: #8F2427;
+}
+#priceBox {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+#WelcomeFromPrice {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill:  #f0fff0;
+}
+#WelcomeToPrice {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill:  #f0fff0;
+}
+#WelcomeFromPriceText {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill:  #f0fff0;
+}
+#WelcomeToPriceText {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill:  #f0fff0;
+}
