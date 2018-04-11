@@ -6,7 +6,6 @@ Explore Airbnb properties in London.
 
 ### Machine Learning Model
 
-Download this model and copy the contents to the +libs folder.
+Download this model and copy the contents to the +libs folder if Git LFS doesn't download it.
 [Model](https://stanfordnlp.github.io/CoreNLP/index.html#download)
-## MODEL REQUIRED TO RUN
 
