@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 import javax.net.ssl.HttpsURLConnection;
+
 /**
  * Where API calls are made to external services.
  * Everything is static as this is a utility class.
@@ -25,7 +25,7 @@ public class AirbnbAPI {
      */
     public static List<String> getReviewComments(String id) throws Exception {
         List<String> reviewComments = new ArrayList<>();
-        String jsonString = getHTTP("https://api.airbnb.com/v2/reviews?client_id=d306zoyjsyarp7ifhu67rjxn52tv0t20&role=all&listing_id=" + id);
+        String jsonString = getHTTP("https://api.airbnb.com/v2/reviews?client_id=d306zoyjsyarp7ifhu67rjxn52tv0t20&role=all&listing_id=" + id, false);
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = (JSONObject) parser.parse(jsonString);
         JSONObject metadata = (JSONObject) jsonObject.get("metadata");
@@ -51,7 +51,7 @@ public class AirbnbAPI {
      * @throws Exception if no image found.
      */
     public static Image getListingImage(String id) throws Exception {
-        String jsonString = getHTTP("https://api.airbnb.com/v2/listings/" + id + "?_format=v1_legacy_for_p3&client_id=3092nxybyb0otqw18e8nh5nty");
+        String jsonString = getHTTP("https://api.airbnb.com/v2/listings/" + id + "?_format=v1_legacy_for_p3&client_id=3092nxybyb0otqw18e8nh5nty", false);
         JSONParser parser = new JSONParser();
         JSONObject jsonObject = (JSONObject) parser.parse(jsonString);
         JSONObject listing = (JSONObject) jsonObject.get("listing");
@@ -75,7 +75,7 @@ public class AirbnbAPI {
             listingsToTest.add(listings.get(i));
         }
         String origins = listingsToTest.stream().map(l -> l.getLatitude() + "," + l.getLongitude()).collect(Collectors.joining("|"));
-        String jsonString = getHTTPS("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origins + "&destinations=KCL&mode=transit&key=AIzaSyBucLEeuQwipnHrwPBfqRCs46wSExF91Dc");
+        String jsonString = getHTTP("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origins + "&destinations=KCL&mode=transit&key=AIzaSyBucLEeuQwipnHrwPBfqRCs46wSExF91Dc", true);
         if (jsonString.contains("OVER_QUERY_LIMIT")) {
             return "Query limit exceeded";
         }
@@ -113,33 +113,19 @@ public class AirbnbAPI {
     /**
      *
      * @param urlToRead url to get JSON file from.
+     * @param https whether to use https or not.
      * @return string with json.
      * @throws Exception if httpconnection error occurs.
      */
-    private static String getHTTP(String urlToRead) throws Exception {
+    private static String getHTTP(String urlToRead, Boolean https) throws Exception {
         StringBuilder result = new StringBuilder();
         URL url = new URL(urlToRead);
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
-        String line;
-        while ((line = rd.readLine()) != null) {
-            result.append(line);
+        HttpURLConnection conn;
+        if(https) {
+            conn = (HttpsURLConnection) url.openConnection();
+        } else {
+            conn = (HttpURLConnection) url.openConnection();
         }
-        rd.close();
-        return result.toString();
-    }
-
-    /**
-     *
-     * @param urlToRead url to get json file for.
-     * @return string with json.
-     * @throws Exception if https error occurs.
-     */
-    private static String getHTTPS(String urlToRead) throws Exception {
-        StringBuilder result = new StringBuilder();
-        URL url = new URL(urlToRead);
-        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
         conn.setRequestMethod("GET");
         BufferedReader rd = new BufferedReader(new InputStreamReader(conn.getInputStream()));
         String line;

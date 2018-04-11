@@ -19,6 +19,7 @@ import java.util.Observable;
 
 /**
  * Displays the selected properties
+ * @author Firat
  */
 public class NeighborhoodPopup extends Application{
     private List<AirbnbListing> airbnbListings;

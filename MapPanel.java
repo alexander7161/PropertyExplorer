@@ -19,6 +19,7 @@ import java.util.Stack;
 
 /**
  * A Panel that displays the map
+ * @author Firat
  */
 public class MapPanel extends PropertyPanel {
     private ArrayList<AirbnbListing> currentListings1;
@@ -40,7 +41,6 @@ public class MapPanel extends PropertyPanel {
         currentListings1=CurrentListings.getCurrentListings();
         HashMap<String,ArrayList<AirbnbListing>> neighborhoodTable=createNeighborhoodTable();
         for(ArrayList<AirbnbListing> neighborhood:neighborhoodTable.values()){
-
             HouseSymbol curSymbol =new HouseSymbol(neighborhood);
             symbols.getChildren().add(curSymbol);
             double size= getSizeOfMarker(neighborhood);
@@ -48,7 +48,6 @@ public class MapPanel extends PropertyPanel {
             curSymbol.setFitWidth(size);
             align(curSymbol);
         }
-
     }
 
     /**

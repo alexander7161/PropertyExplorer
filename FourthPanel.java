@@ -37,7 +37,6 @@ public class FourthPanel extends PropertyPanel {
     public FourthPanel() {
         title = "Analysis";
         panel = new GridPane();
-        list.setMinWidth(400);
         list.setCellFactory(param -> new ListingCell());
         analyser = new SentimentAnalysis(this);
 
@@ -89,6 +88,7 @@ public class FourthPanel extends PropertyPanel {
         informationPanel.setMinWidth(200);
         informationPanel.setCenter(new Label("Click on one " +
                 "item of the list on the left and \n see the sentiment score and details!"));
+        informationPanel.setMaxHeight(panel.heightProperty().get());
         smilyBox = new HBox(5);
         panel.add(informationPanel, 1, 0);
         ColumnConstraints column1 = new ColumnConstraints();
@@ -102,6 +102,12 @@ public class FourthPanel extends PropertyPanel {
 
         list.getSelectionModel().selectedIndexProperty().addListener(
                 (ov, old_val, new_val) -> {
+                    // When the multirange slider is moved it returns -1 as new_val, and then returns actual value.
+                    // If the same property is selected twice.
+                    // Then skip.
+                    if(new_val.intValue() == -1 || old_val.equals(new_val)) {
+                        return;
+                    }
                     currentPropertyID = CurrentListings.getCurrentListings().get(new_val.intValue()).getId();
                     try {
                         currentReviews = AirbnbAPI.getReviewComments(currentPropertyID);
@@ -139,7 +145,7 @@ public class FourthPanel extends PropertyPanel {
             listingImage.fitHeightProperty().set(400);
             top.getChildren().add(listingImage);
         } catch (Exception e) {
-
+            System.out.println(e);
         }
         informationPanel.setTop(top);
 
@@ -153,20 +159,10 @@ public class FourthPanel extends PropertyPanel {
             VBox reviewLabelList = new VBox(20);
             reviewLabelList.getChildren().addAll(reviewLabels);
             ScrollPane reviewBox = new ScrollPane();
-            reviewBox.setMaxHeight(300);
+            reviewBox.setMaxHeight(200);
             reviewBox.setContent(reviewLabelList);
             informationPanel.setBottom(reviewBox);
 
-
-//            dialogVbox.getChildren().addAll(reviewLabels);
-//            dialogVbox.setFillWidth(true);
-//            informationPanel.setCenter(listingImage);
-//            informationPanel.setTop(smilyBox);
-//            ScrollPane bottom = new ScrollPane();
-//            bottom.setMaxHeight(300);
-//            bottom.setContent(dialogVbox);
-//            informationPanel.setBottom(bottom);
-//        }
     }
 }
 

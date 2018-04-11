@@ -1,3 +1,4 @@
+import java.io.File;
 import java.net.URL;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +17,12 @@ import javafx.stage.Stage;
 public class PropertyExplorer extends Application {
     @Override
     public void start(Stage stage) throws Exception {
+        File f = new File("+libs/stanford-corenlp-3.9.1-models.jar");
+        if(!f.exists()) {
+            System.out.println("Please download model https://stanfordnlp.github.io/CoreNLP/index.html#download");
+            System.out.println("Copy contents to +libs folder.");
+            return;
+        }
         //Get the layout FXML file.
         BorderPane root = FXMLLoader.load(
                 new URL(PropertyExplorer.class.getResource("PropertyExplorerLayout.fxml").toExternalForm())
