@@ -5,10 +5,13 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
+/**
+ * @author Firat
+ */
 public class HouseSymbol extends ImageView{
     String neighborhood;
     public HouseSymbol(ArrayList<AirbnbListing> standsFor){
-        super("img/HouseSymbolImage.png");
+        super("img/HouseSymbol.png");
         neighborhood=standsFor.get(0).getNeighbourhood();
         addEventHandler(MouseEvent.MOUSE_CLICKED,(event)->new NeighborhoodPopup(standsFor).start(new Stage()));
         addEventFilter(MouseEvent.MOUSE_ENTERED_TARGET, (event) -> this.setOpacity(0.5));

@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 /**
  * Controller for the Property Explorer. Defines the logic of the GUI elements.
  *
- * @author Alex, Sarosh
+ * @author Alex
  * @version 28.03.2018
  */
 public class PropertyExplorerController implements Initializable {
@@ -132,6 +132,7 @@ public class PropertyExplorerController implements Initializable {
      */
     private void createPriceSliderListeners() {
         priceRangeSlider.lowValueChangingProperty().addListener(( (arg, oldVal, newVal) -> {
+            // When low knob is not moving anymore.
             if(!newVal) {
                 // Set the minimum price to the new value chosen.
                 CurrentListings.setMinimumPrice((int) Math.round(priceRangeSlider.getLowValue()));
@@ -139,6 +140,7 @@ public class PropertyExplorerController implements Initializable {
                 fromPriceLabel.setText("£" + Integer.toString(CurrentListings.getMinimumPrice()));
                 //Update the current panel.
                 panels.get(currentPanelIndex).update();
+                // If a knob has not yet been set.
                 if(!fromPriceSet || !toPriceSet) {
                     fromPriceSet = true;
                     //If the toPrice has also been set enable buttons.
@@ -149,6 +151,7 @@ public class PropertyExplorerController implements Initializable {
             }
         }));
         priceRangeSlider.highValueChangingProperty().addListener(((arg, oldVal, newVal) -> {
+            // When high knob is not moving anymore.
             if (!newVal) {
                 // Set the maximum price to the new value chosen.
                 CurrentListings.setMaximumPrice(Math.round((int) Math.round(priceRangeSlider.getHighValue())));
@@ -156,6 +159,7 @@ public class PropertyExplorerController implements Initializable {
                 toPriceLabel.setText("£" + Integer.toString(CurrentListings.getMaximumPrice()));
                 //Update the current panel.
                 panels.get(currentPanelIndex).update();
+                // If a knob has not yet been set.
                 if(!fromPriceSet || !toPriceSet) {
                     toPriceSet = true;
                     //If the fromPrice has also been set enable buttons.
@@ -166,5 +170,4 @@ public class PropertyExplorerController implements Initializable {
             }
         }));
     }
-
 }

@@ -1,13 +1,5 @@
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.scene.Scene;
-import javafx.geometry.Insets;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-import javafx.stage.Stage;
-import javafx.scene.control.ChoiceBox;
-import javafx.collections.FXCollections;
 
 public class WelcomePanel extends PropertyPanel{
 
@@ -15,7 +7,10 @@ public class WelcomePanel extends PropertyPanel{
     private Label fromPriceLabel;
     private Label toPriceLabel;
 
-
+    /**
+     * Welcome panel
+     * @author Sarosh
+     */
     public WelcomePanel() {
         title = "Welcome";
         panel = new BorderPane();
@@ -54,9 +49,13 @@ public class WelcomePanel extends PropertyPanel{
     public void update() {
         try {
             fromPriceLabel.setText(Integer.toString(CurrentListings.getMinimumPrice()));
-            toPriceLabel.setText(Integer.toString(CurrentListings.getMaximumPrice()));
         }
-        catch (Exception e) {
+        catch (PriceRangeNotSetException e) {
+            // Don't update text if min or max price hasn't been chosen yet.
+        }
+        try {
+            toPriceLabel.setText(Integer.toString(CurrentListings.getMaximumPrice()));
+        } catch (PriceRangeNotSetException e) {
             // Don't update text if min or max price hasn't been chosen yet.
         }
     }

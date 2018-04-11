@@ -4,7 +4,7 @@ import java.util.stream.Collectors;
 /**
  * Class to keep track of the current listings which change based on the price range chosen.
  * Static so an instance is not needed.
- * Created by k1761218 on 13/03/18.
+ * Created by Alexander Davis on 13/03/18.
  */
 public final class CurrentListings {
     //Get data from AirbnbDataLoader class.
