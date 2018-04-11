@@ -26,6 +26,7 @@
       <element id="extracted-dir" path="$PROJECT_DIR$/+libs/ejml-0.23.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/+libs/json-simple-1.1.1.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/+libs/stanford-corenlp-3.9.1-sources.jar" path-in-jar="/" />
+      <element id="file-copy" path="$PROJECT_DIR$/config.xml" />
     </root>
   </artifact>
 </component>

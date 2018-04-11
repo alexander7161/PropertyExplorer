@@ -79,14 +79,12 @@ public class AirbnbAPI {
         Properties properties = new Properties();
 
         try {
-            File file = new File("config.xml");
-            FileInputStream fileInput = new FileInputStream(file);
-            properties.loadFromXML(fileInput);
-            fileInput.close();
+            properties.loadFromXML(PropertyExplorer.class.getResourceAsStream("config.xml"));
             if (properties.get("googleMapsAPI") == null) {
                 return "No key provided in config.xml";
             }
         } catch (Exception e) {
+            System.out.println(e);
             return "Key not provided in config.xml";
         }
             String jsonString = getHTTP("https://maps.googleapis.com/maps/api/distancematrix/json?origins=" + origins + "&destinations=KCL&mode=transit&key=" + properties.get("googleMapsAPI"), true);
