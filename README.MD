@@ -9,5 +9,7 @@ Explore Airbnb properties in London.
 Download this model and copy the contents to the +libs folder.
 [Model](https://stanfordnlp.github.io/CoreNLP/index.html#download)
 
+### Google Maps API Key
+
 Get a Google Maps API Key [here](https://developers.google.com/maps/documentation/distance-matrix/get-api-key) and insert into config.xml
 
