@@ -13,3 +13,14 @@ Download this model and copy the contents to the +libs folder.
 
 Get a Google Maps API Key [here](https://developers.google.com/maps/documentation/distance-matrix/get-api-key) and insert into config.xml
 
+## Welcome Screen
+<img src="https://github.com/alexander7161/PropertyExplorer/blob/master/Screenshots/WelcomeScreen.png" width="100%"></img>
+## Map Panel
+<img src="https://github.com/alexander7161/PropertyExplorer/blob/master/Screenshots/map.png" width="100%"></img>
+## First Four Statistics
+<img src="https://github.com/alexander7161/PropertyExplorer/blob/master/Screenshots/firstFourStatistics.png" width="100%"></img>
+## Last Four Statistics
+<img src="https://github.com/alexander7161/PropertyExplorer/blob/master/Screenshots/lastFourStatistics.png" width="100%"></img>
+## Sentiment Analysis
+<img src="https://github.com/alexander7161/PropertyExplorer/blob/master/Screenshots/fourthPanel.png" width="100%"></img>
+<img src="https://github.com/alexander7161/PropertyExplorer/blob/master/Screenshots/poorAnalysis.png" width="100%"></img>
