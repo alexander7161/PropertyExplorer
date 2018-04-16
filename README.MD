@@ -1,4 +1,4 @@
-# Gym Lads
+# Property Explorer
 
 Explore Airbnb properties in London.
 
