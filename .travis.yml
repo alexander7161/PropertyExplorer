@@ -3,4 +3,4 @@ language: java
 jdk:
   - oraclejdk8
 
-ant src/test
+script: ant src/test
