@@ -3,4 +3,4 @@ language: java
 jdk:
   - oraclejdk8
 
-script: ant src/test
+script: ant src/test/CurrentListingsTest.java
