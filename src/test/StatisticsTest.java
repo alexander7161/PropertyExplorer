@@ -1,7 +1,12 @@
-import static org.junit.Assert.*;
+
+import org.junit.Assert;
 import org.junit.Test;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.Set;
 import java.util.stream.Collectors;
+import static org.junit.Assert.assertEquals;
 
 /**
  * The test class for Statistics
@@ -11,15 +16,22 @@ import java.util.stream.Collectors;
  */
 public class StatisticsTest
 {
-    ArrayList<Statistic> statistics;
+    ArrayList<Statistic> statistics= new ArrayList<>();
     /**
-     * Default constructor for test class src.StatisticsTest
+     * Default constructor for test class src.test.StatisticsTest
      */
     public StatisticsTest()
     {
         CurrentListings.setMinimumPrice(0);
         CurrentListings.setMaximumPrice(500);
-        statistics = Statistic.getStatistics();
+        statistics.add(new Stat1());
+        statistics.add(new Stat2());
+        statistics.add(new Stat3());
+        statistics.add(new Stat4());
+        statistics.add(new StatAlex());
+        statistics.add(new StatAns());
+        statistics.add(new StatFirat());
+        statistics.add(new StatSarosh());
     }
 
     /**
@@ -43,7 +55,7 @@ public class StatisticsTest
     @Test
     public void testStatistic2() {
          String stat = statistics.get(1).updateStatistic();
-        assertEquals(CurrentListings.getCurrentListings().size(),Integer.parseInt(stat));
+        Assert.assertEquals(CurrentListings.getCurrentListings().size(),Integer.parseInt(stat));
     }
 
     /**

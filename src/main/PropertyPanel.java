@@ -1,4 +1,3 @@
-
 import javafx.scene.layout.*;
 
 abstract public class PropertyPanel {

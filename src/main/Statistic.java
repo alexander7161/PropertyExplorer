@@ -9,7 +9,7 @@ public abstract class Statistic {
     String title = "";
 
     /**
-     * Only called once in src.Statistic box.
+     * Only called once in src.main.Statistic box.
      * @return list of statistics objects.
      */
     public static ArrayList<Statistic> getStatistics() {
@@ -25,8 +25,12 @@ public abstract class Statistic {
         return statistics;
     }
 
+    public ArrayList<Statistic> getStatisticsTest() {
+        return Statistic.getStatistics();
+    }
+
     /**
-     * @return src.Statistic title.
+     * @return src.main.Statistic title.
      */
     public String getTitle() {
         return title;

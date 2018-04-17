@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
  * Created by Alexander Davis on 13/03/18.
  */
 public final class CurrentListings {
-    //Get data from src.AirbnbDataLoader class.
+    //Get data from src.main.AirbnbDataLoader class.
     private static AirbnbDataLoader loader= new AirbnbDataLoader();
     private static List<AirbnbListing> listings;
     //Set max and min to 'null' value initially.

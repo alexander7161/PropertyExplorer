@@ -105,7 +105,7 @@ public class FourthPanel extends PropertyPanel {
         // Add listener for listView item selected.
         list.getSelectionModel().selectedIndexProperty().addListener(
                 (ov, old_val, new_val) -> {
-                    // When the multirange slider is moved it returns -1 as new_val, and then returns actual value.
+                    // When the main.multirange slider is moved it returns -1 as new_val, and then returns actual value.
                     // If the same property is selected twice.
                     // Then skip.
                     if(new_val.intValue() == -1 || old_val.equals(new_val)) {

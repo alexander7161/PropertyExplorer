@@ -1,8 +1,6 @@
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-
-import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 

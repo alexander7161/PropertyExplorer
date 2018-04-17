@@ -26,7 +26,7 @@ public class StatisticBox extends Pane {
         currentStatistics.addAll(Statistic.getStatistics());
     }
     /**
-     * Constructor for objects of class src.StatisticBox
+     * Constructor for objects of class src.main.StatisticBox
      */
     public StatisticBox() {
         //Gives this box the first statistic in the queue.
@@ -58,7 +58,7 @@ public class StatisticBox extends Pane {
      * When right button is clicked
      * current statistic is added to front of queue.
      * statistic is taken from the back of queue.
-     * src.Statistic is updated.
+     * src.main.Statistic is updated.
      */
     private void rightButtonClick() {
         currentStatistics.addFirst(statistic);
@@ -70,7 +70,7 @@ public class StatisticBox extends Pane {
      * When left button is clicked
      * current statistic is added to back of queue.
      * statistic is taken from the front of queue.
-     * src.Statistic is updated.
+     * src.main.Statistic is updated.
      */
     private void leftButtonClick() {
         currentStatistics.addLast(statistic);

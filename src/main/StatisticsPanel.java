@@ -11,7 +11,7 @@ public class StatisticsPanel extends PropertyPanel{
     private GridPane panel;
     private List<StatisticBox> statisticBoxesDisplayed = new ArrayList<>();
     public StatisticsPanel(){
-        title = "src.Statistic";
+        title = "Statistics";
         panel = new GridPane();
         //Create 4 statistics boxes and add them to the list of boxes.
         for (int i=1;i<=4;i++){

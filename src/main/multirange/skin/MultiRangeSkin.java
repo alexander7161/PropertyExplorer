@@ -36,7 +36,6 @@ import javafx.scene.chart.NumberAxis;
 import javafx.scene.layout.StackPane;
 import multirange.MultiRange;
 import multirange.behavior.MultiRangeBehavior;
-
 import java.util.ArrayList;
 import java.util.List;
 

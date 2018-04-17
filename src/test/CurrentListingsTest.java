@@ -1,9 +1,10 @@
 import static org.junit.Assert.*;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
- * The test class for src.CurrentListings.
+ * The test class for src.main.CurrentListings.
  *
  * @author  Alexander Davis
  * @version 29.03.2018
@@ -11,7 +12,7 @@ import org.junit.Test;
 public class CurrentListingsTest
 {
     /**
-     * Default constructor for test class src.CurrentListingsTest
+     * Default constructor for test class src.test.CurrentListingsTest
      */
     public CurrentListingsTest()
     {
@@ -24,7 +25,7 @@ public class CurrentListingsTest
     public void minimumPriceIsSet()
     {
         CurrentListings.setMinimumPrice(50);
-        assertEquals(50, CurrentListings.getMinimumPrice());
+        Assert.assertEquals(50, CurrentListings.getMinimumPrice());
     }
 
     /**
@@ -42,7 +43,7 @@ public class CurrentListingsTest
                 highestPrice = l.getPrice();
             }
         }
-        assertEquals(highestPrice, CurrentListings.getMaximumPrice());
+        Assert.assertEquals(highestPrice, CurrentListings.getMaximumPrice());
     }
 
     /**
@@ -53,7 +54,7 @@ public class CurrentListingsTest
     {
         CurrentListings.setMinimumPrice(0);
         CurrentListings.setMaximumPrice(500);
-        assertEquals(53904, CurrentListings.getCurrentListings().size());
+        Assert.assertEquals(53904, CurrentListings.getCurrentListings().size());
     }
 
     /**
@@ -65,7 +66,7 @@ public class CurrentListingsTest
     {
         CurrentListings.setMinimumPrice(0);
         CurrentListings.setMaximumPrice(8);
-        assertEquals(2, CurrentListings.getCurrentListings().size());
+        Assert.assertEquals(2, CurrentListings.getCurrentListings().size());
     }
 }
 

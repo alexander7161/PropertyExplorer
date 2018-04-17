@@ -1,9 +1,6 @@
 import java.io.*;
-import java.net.URL;
 import java.util.ArrayList;
-
 import com.opencsv.CSVReader;
-import java.net.URISyntaxException;
 
 public class AirbnbDataLoader {
  
