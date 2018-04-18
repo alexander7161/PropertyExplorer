@@ -10,7 +10,7 @@ import java.util.Properties;
 
 /**
  * This class uses the Stanford NLP library and analyse the sentiment of a text.
- * @author  Sarosh
+ * @author  Sarosh, Alex
  * @version 29.03.2018
  */
 public class SentimentAnalysis extends AsyncTask<String, Void, Integer> {
