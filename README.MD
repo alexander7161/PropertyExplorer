@@ -2,7 +2,20 @@
 
 Explore Airbnb properties in London.
 
+University Project.
+
 [Report](https://docs.google.com/document/d/1rWt1V1ngHSIxMbzYlD0ypGnj3oiGfzgdQQPrNcbNpvU/edit?usp=sharing "Link to report on Google Docs")
+
+
+## Try it out
+Works on any operating system with java.
+
+[Download executable jar](https://github.com/alexander7161/PropertyExplorer/releases)
+
+
+## Compiling Yourself
+
+This project uses external libraries that are large in size and may need to be downloaded outside of GitHub to compile.
 
 ### Machine Learning Model
 
@@ -12,6 +25,7 @@ Download this model and copy the contents to the +libs folder.
 ### Google Maps API Key
 
 Get a Google Maps API Key [here](https://developers.google.com/maps/documentation/distance-matrix/get-api-key) and insert into config.xml
+
 
 ## Welcome Screen
 <img src="https://raw.githubusercontent.com/alexander7161/PropertyExplorer/master/Screenshots/WelcomeScreen.png" width="100%"></img>
